@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right top, #051937, #32275c, #6d2b75, #ae227e, #eb1273);
+    background-repeat: no-repeat;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+nav{
+    display: flex;
+    background-color: #000000;
+    align-items: center
+}
+
+h1{
+    color: #ffffff;
+    font-size: 20px;
+    margin: 5px 20px
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: 1s;
+}
+
+.reg{
+    flex: 1;
+    text-align: right;
+    font-size: 20px;
+    margin: 0 20px;
+    transition: 1s; text-decoration: none;
+    color: #ffffff;
+    transition: 1s;
+}
+
+a:hover, .reg:hover{
+    font-size: 23px;
+    color: #de97f0;
+    transition: 1.5s;
+}
+
+
+
+
+footer{
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    color: aliceblue;
+    letter-spacing: 4px;
+    background-color: #000000;
+}
+
