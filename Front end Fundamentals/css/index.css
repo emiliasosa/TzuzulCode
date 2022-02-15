@@ -22,8 +22,6 @@ nav{
 
 nav ul{
     margin: 0 20px;
-    
-    
 }
 
 nav li{
@@ -58,9 +56,9 @@ nav a:hover {
     border-radius: 10px;
     margin: 20px;
     background-color: #ffffff;
-    
-box-shadow: 3px 2px 13px -5px rgba(0,0,0,0.66);
+    box-shadow: 3px 2px 13px -5px rgba(0,0,0,0.66);
 }
+
 .img-muestra{
     width: 300px;
     height: 250px;
@@ -110,4 +108,8 @@ footer{
     color: aliceblue;
     letter-spacing: 4px;
     background-color: #569e8c;
+}
+
+p{
+    text-align: justify;
 }
