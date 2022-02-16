@@ -40,8 +40,63 @@ a:hover, .reg:hover{
     transition: 1.5s;
 }
 
+#show{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 
+.alluser{
+    padding: 0 20px 10px;
+    background: rgba(255, 255, 255, 0.9);
+    width: 300px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 9px 10px 38px -18px rgba(0,0,0,1);
+    font-size: 18px;
+    color: #6d2b75; 
+}
+
+.nombre{
+    font-size: 25px;
+    color: #6d2b75; 
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.btndiv{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    background-color: #7c3c8b;
+    border-radius: 10px;
+    border: none;
+    color: aliceblue;
+    font-size: 13px;
+    width: 130px;
+    height: 30px;
+    box-shadow: 2px 5px 8px -6px rgba(0,0,0,0.83);
+    transition: 1.5s;
+    margin: 5px 0;
+}
+
+button:hover{
+    background-color: #a567b3;
+    letter-spacing: 3px;
+    transition: 1.5s;
+}
+
+.btndel{
+    background-color: #ac2f2f;
+}
+
+.btndel:hover{
+    background-color: #e40808;
+    font-weight: 600;
+}
 
 footer{
     display: flex;
