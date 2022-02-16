@@ -25,12 +25,12 @@ router.get('/', async (req, res)=>{
     return res.sendFile(path.join(__dirname, '../views/index.html'))
 })
 
-router.get('/', async (req, res)=>{
+router.get('/api/users', async (req, res)=>{
     const users = await userController.readAll()
     return res.json(users)
 })
 
-router.delete('/:id', async (req, res)=>{
+router.delete('/api/users/:id', async (req, res)=>{
     const id = req.params.id
     const user = await userController.delete(id)
     return res.json(user)
