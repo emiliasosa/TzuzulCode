@@ -1,6 +1,5 @@
 const express = require('express')
 const path = require("path")
-const {query, insert, remove} = require('./database')
 
 const userRoutes = require('./routes/users')
 
@@ -13,12 +12,6 @@ app.use(express.urlencoded({extended:true}))
 
 app.use(userRoutes)
 
-/*app.get('/mostrar', async (req, res)=>{
-    query('SELECT * FROM users')
-    .then((results) =>{
-        console.log(results)
-    })
-})*/
 
 app.get('/', (req, res)=>{
     return res.sendFile(path.join(__dirname, 'views/index.html'))
