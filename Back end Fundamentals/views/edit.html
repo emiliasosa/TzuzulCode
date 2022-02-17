@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="/css/new.css">
+</head>
+<body>
+    <header></header>
+    <nav>
+        <h1>GESTOR DE USUARIOS</h1>
+        <p class="reg"><a href="/">Volver</a></p>
+    </nav>
+    <main>
+        <div class="user">
+                <form action="/edit" method="POST">
+                    <h3>Editar usuario</h3>
+                    <label for="nombre">Nombre</label><br>
+                    <input type="text" name="name" class="bordeinterior" ><br>
+                    <label for="date">Fecha de nacimiento</label><br>
+                    <input type="date" name="birthday" id="" class="bordeinterior" ><br>
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="" class="bordeinterior" ><br>
+                    <label for="genero">Genero</label><br>
+                    <input type="text" name="gender" id="" class="bordeinterior" ><br>
+                    <label for="profesion">Profesión</label><br>
+                    <input type="text" name="profession" id="" class="bordeinterior" ><br>
+                    <label for="salario">Salario</label><br>
+                    <input type="number" name="salary" id="" class="bordeinterior" ><br>
+                    <label for="foto">Foto</label><br>
+                    <input type="text" name="picture" id="" class="bordeinterior" ><br>
+                    <label for="about">Pasatiempos</label><br>
+                    <input type="text" name="about" id="" class="bordeinterior" maxlength="120" ><br>
+                    <input type="submit" class="submit">
+                </form>
+        </div>
+    </main>
+</body>
+</html>
