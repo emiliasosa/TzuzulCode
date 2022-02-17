@@ -22,7 +22,8 @@ function eliminar(id){
 
 function editar(id){
     window.location.href = "/edit";
-    fetch("/edit/"+id, { method:"POST" })
+    
+    fetch("/edit/"+id, { method:"PUT" })
     .then((res) => {return res.json})
     .then((data) => { window.location.href = "/";})
 }
@@ -62,4 +63,6 @@ function renderUsers(){
     `
     }
 }
+
+
 
