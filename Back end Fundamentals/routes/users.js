@@ -40,12 +40,15 @@ router.get('/edit', (req, res)=>{
     return res.sendFile(path.join(__dirname, '../views/edit.html'))
 })
 
-router.put('/edit/:id', async (req, res)=>{
+router.post('/edit/:id', async (req, res)=>{
     const id = req.params.id
-    const user = req.body.user
+    const user = req.body
     const result = await userController.update(user,id)
-    return console.log(result)
+    console.log(user)
+    console.log(result)
+    return res.redirect('/')
     
 })
+
 
 module.exports = router
