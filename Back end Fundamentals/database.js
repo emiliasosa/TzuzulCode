@@ -20,6 +20,15 @@ function query(sql, data){
     })
 }
 
+async function edit(user, id){
+    try{
+        await query (`UPDATE users SET ? WHERE id=?`, [user,id])
+        return {user, success: true}
+    }catch(error){
+        return {error, success: false}
+    }
+}
+
 async function insert(tableName, data){
     try{
         await query (`INSERT INTO ${tableName}(??) VALUES(?)`, [Object.keys(data), Object.values(data)])
@@ -38,4 +47,4 @@ async function remove(tableName, data){
    }
 }
 
-module.exports = {query, insert, remove}
+module.exports = {query, insert, remove, edit}
