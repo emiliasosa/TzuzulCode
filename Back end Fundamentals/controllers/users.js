@@ -1,4 +1,4 @@
-const {query, insert, remove} = require('../database')
+const {query, insert, remove, edit} = require('../database')
 
 class UserController{
     async create(user){
@@ -10,7 +10,7 @@ class UserController{
         return users
     }
     async update(user, id){
-        const users = await query ('UPDATE users SET ? WHERE id=?', [user,id])
+        const users = await edit(user, id)
         return users
     }
     async delete(id){
