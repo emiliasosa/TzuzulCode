@@ -23,9 +23,12 @@ function eliminar(id){
 function editar(id){
     window.location.href = "/edit";
     
-    fetch("/edit/"+id, { method:"PUT" })
+    fetch("/edit/"+id,  {
+        method: 'POST',
+        headers: { Accept: 'application/json, text/plain, */*', 'Content-Type': 'application/json'},
+        body: JSON.stringify(user)})
     .then((res) => {return res.json})
-    .then((data) => { window.location.href = "/";})
+    .then(() => {window.location.href = "/";})
 }
 
 /*function filterUser(){
