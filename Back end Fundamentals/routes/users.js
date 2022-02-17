@@ -36,17 +36,22 @@ router.delete('/api/users/:id', async (req, res)=>{
     return res.json(user)
 })
 
-router.get('/edit', (req, res)=>{
+router.get('/edit/:id', (req, res)=>{
     return res.sendFile(path.join(__dirname, '../views/edit.html'))
 })
 
 router.post('/edit/:id', async (req, res)=>{
     const id = req.params.id
     const user = req.body
-    const result = await userController.update(user,id)
+    const result = await userController.update(user, id)
+    console.log(id)
     console.log(user)
     console.log(result)
-    return res.redirect('/')
+    if(result.success){
+        return res.redirect('/')
+    }else{
+        return res.redirect("/edit/:id")
+    }
     
 })
 
