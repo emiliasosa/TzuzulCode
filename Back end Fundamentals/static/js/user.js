@@ -21,12 +21,9 @@ function eliminar(id){
 }
 
 function editar(id){
-    window.location.href = "/edit";
+    window.location.href = "/edit/"+id;
     
-    fetch("/edit/"+id,  {
-        method: 'POST',
-        headers: { Accept: 'application/json, text/plain, */*', 'Content-Type': 'application/json'},
-        body: JSON.stringify(user)})
+    fetch("/edit/"+id,  {method: 'POST', headers: { Accept: 'application/json, text/plain, */*', 'Content-Type': 'application/json'},body: JSON.stringify(user, id)})
     .then((res) => {return res.json})
     .then(() => {window.location.href = "/";})
 }
