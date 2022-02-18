@@ -40,14 +40,27 @@ let matrizCuadrada = () => {
         nlimite = nlimite -1;
     }
 
-    document.write("<table>")
-    for(let i = 0; i < numero; i++){
-        document.write("<tr>")
-        for(let j = 0; j < numero; j++){
-            document.write("<td align='center'>" + matriz2[i][j]+ "</td>");
+    let generarTabla = () =>{
+        let body = document.getElementsByClassName("tabla2")[0];
+        let tabla   = document.createElement("table");
+        let tblBody = document.createElement("tbody");
+        
+        for(let i = 0; i < numero; i++){
+            let hilera = document.createElement("tr");
+            for(let j = 0; j < numero; j++){
+                let celda = document.createElement("td");
+                let textoCelda = document.createTextNode(matriz2[i][j]);
+                celda.appendChild(textoCelda);
+                hilera.appendChild(celda);
+            }
+            tblBody.appendChild(hilera);
         }
-        document.write("</tr>")
+        tabla.appendChild(tblBody);
+        body.appendChild(tabla);
+        tabla.setAttribute("width", "200")
+        tabla.setAttribute("style", "margin-bottom: 20px")
     }
-    document.write("</table>")
+
+    return generarTabla()
 }
 
