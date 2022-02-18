@@ -57,7 +57,7 @@ let matrizCuadrada = () => {
         }
         tabla.appendChild(tblBody);
         body.appendChild(tabla);
-        tabla.setAttribute("width", "200")
+        tabla.setAttribute("width", "400")
         tabla.setAttribute("style", "margin-bottom: 20px")
     }
 
