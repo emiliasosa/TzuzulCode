@@ -1,5 +1,6 @@
 
 let matrizIngreso = () => {
+
     let fila  = parseInt(prompt("Ingrese numero de filas"));
     let columna = parseInt(prompt("Ingrese numero de columnas"))
     let inicio = 0;
@@ -63,7 +64,7 @@ let matrizIngreso = () => {
         }
         tabla.appendChild(tblBody);
         body.appendChild(tabla);
-        tabla.setAttribute("width", "200")
+        tabla.setAttribute("width", "400")
         tabla.setAttribute("style", "margin-bottom: 20px")
     }
 
