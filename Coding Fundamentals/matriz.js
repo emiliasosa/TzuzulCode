@@ -15,7 +15,7 @@ let matrizCuadrada = () => {
         }
     }
 
-    while(contador < (Math.pow(numero,2))){
+    while(contador <= (Math.pow(numero,2))){
     for(let i = inicio; i <= nlimite; i++){
             matriz2[inicio][i] = contador;
             contador++;
