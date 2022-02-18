@@ -45,26 +45,43 @@ let matrizIngreso = () => {
         columnalim = columnalim -1
     }
 
-    document.write("<table style = 'border: 1px solid #999;'>")
-    for(let i = 0; i < fila; i++){
-        document.write("<tr  style = 'border: 1px solid #999;'>")
-        for(let j = 0; j < columna; j++){
-            document.write("<td align='center'  style = 'border: 1px solid #999;'>" + matriz[i][j]+ "</td>");
+    
+    let generarTabla = () =>{
+        let body = document.getElementsByClassName("cardmatriz")[0];
+        let tabla   = document.createElement("table");
+        let tblBody = document.createElement("tbody");
+        
+        for(let i = 0; i < fila; i++){
+            let hilera = document.createElement("tr");
+            for(let j = 0; j < columna; j++){
+                let celda = document.createElement("td");
+                let textoCelda = document.createTextNode(matriz[i][j]);
+                celda.appendChild(textoCelda);
+                hilera.appendChild(celda);
+            }
+            tblBody.appendChild(hilera);
         }
-        document.write("</tr>")
+        tabla.appendChild(tblBody);
+        body.appendChild(tabla);
+        tabla.setAttribute("width", "200")
+        tabla.setAttribute("style", "margin-bottom: 20px")
     }
-    document.write("</table>")
+
+    return generarTabla()
 }
 
-//matrizIngreso()
 
 let body = document.getElementById("matr")
 body.innerHTML = `
     <div class="cardmatriz">
         <h2>MATRIZ VARIABLE</h2>
         <button onclick=matrizIngreso()> Probar</button>
+        <div class="tabla1">
+        </div>
     </div>
     <div class="cardmatriz">
         <h2>MATRIZ CUADRADA</h2>
         <button onclick=matrizCuadrada()> Probar</button>
+        <div class="tabla2">
+        </div>
     </div>`
