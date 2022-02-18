@@ -1,48 +1,70 @@
-let fila = parseInt(prompt("Ingrese numero de filas"))
-let columnas = parseInt(prompt("Ingrese numero de columnas"))
 
+let matrizIngreso = () => {
+    let fila  = parseInt(prompt("Ingrese numero de filas"));
+    let columna = parseInt(prompt("Ingrese numero de columnas"))
+    let inicio = 0;
+    let numero = fila * columna
+    let contador = 1;
+    let columnalim = columna-1;
+    let filalim = fila-1;
 
-
-/*const arr = [];
-let n = 4
-let c = 1;
-let inicio =  0;
-let nlimite = n-1;
-
-
-while(c < (n * n)){
-    for (let i = inicio; i <= nlimite; i++) {
-        arr[i] = c++ ;
+    let matriz = [];
+    for(let i = 0; i <fila; i++){
+        matriz[i] =[];
     }
-    for(let i = inicio; i<= nlimite; i++){
-        arr[i][nlimite] = c++;
+
+    for(let i = 0; i < fila; i++){
+        for(let j = 0; j < columna; j++){
+            matriz[i][j] = 0;
+        }
     }
-    for(let i = nlimite; i>= 0; i--){
-        arr[nlimite][i] = c++;
+
+    while(contador < numero){
+        for(let i = inicio; i<=columnalim; i++){
+            matriz[inicio][i] = contador;
+            contador++;
+        }
+        
+        for(let i = inicio+1; i < filalim; i++){
+            matriz[i][columnalim] = contador;
+            contador++;
+        }
+    
+        for(let i = columna-1; i >= inicio; i--){
+            matriz[filalim][i] = contador;
+            contador++;
+        }
+
+        for(let i = filalim-1; i>=inicio+1; i--){
+            matriz[i][inicio] = contador;
+            contador++;
+        }
+
+        inicio = inicio + 1;
+        filalim = filalim -1;
+        columnalim = columnalim -1
     }
-    for(let i = nlimite; i>= 0; i--){
-        arr[i][inicio] = c++;
+
+    document.write("<table style = 'border: 1px solid #999;'>")
+    for(let i = 0; i < fila; i++){
+        document.write("<tr  style = 'border: 1px solid #999;'>")
+        for(let j = 0; j < columna; j++){
+            document.write("<td align='center'  style = 'border: 1px solid #999;'>" + matriz[i][j]+ "</td>");
+        }
+        document.write("</tr>")
     }
-    inicio = inicio+1;
-    nlimite = nlimite-1;
+    document.write("</table>")
 }
 
-for(let i = 0; i < n ; i++){
-    document.write();
-    for(let j = 0; j < n ; j++){
-        document.write(arr[i][j]+"<br>");
-    }
+//matrizIngreso()
 
-}
-
-//console.log(arr)
-for(let i = 0; i < fila; i++){
-    let numeros = [];
-    for (let j =0; j<  columnas; j++) {
-       numeros[j] = parseInt(prompt("Ingrese numeros"))
-    }
-    arr[i] = numeros
-}
-*/
-
-
+let body = document.getElementById("matr")
+body.innerHTML = `
+    <div class="cardmatriz">
+        <h2>MATRIZ VARIABLE</h2>
+        <button onclick=matrizIngreso()> Probar</button>
+    </div>
+    <div class="cardmatriz">
+        <h2>MATRIZ CUADRADA</h2>
+        <button onclick=matrizCuadrada()> Probar</button>
+    </div>`
